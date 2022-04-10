@@ -61,5 +61,37 @@ import { NgxYcpayModule } from 'ngx-ycpay';
 export class AppModule {}
 ```
 
-Now go to your component and 🤙 call `<ngx-ycpay [ycPublicKey]="'publicKey'"></ngx-ycpay>`
+Now go to your component and 🤙 call `<ngx-ycpay [yc-publicKey]="'publicKey'"></ngx-ycpay>`
+
+other params not required: 
+
+
+| Name     | Default Value       |
+| -------  | ------------------- |
+| yc-form  | ycForm              |
+| yc-lang  | en                  |
+| yc-error | ycError             |
+| yc-class | `empty`             |
+| class    | yc-group            |
+
+
+The ngx-ycpay has only one event i call him `Pay`  for more explination when user click pay the event will emit a instance of YCPay in (Pay)="" Event
+
+// component.html
+```xml
+<ngx-ycpay [yc-publicKey]="'publicKey'" (Pay)="MyMethodForCreatToken($event)"></ngx-ycpay>
+```
+
+// component.ts
+```typescript
+MyMethodForCreatToken(ycPay){
+ycPay.pay(tokenId)
+      .then(successCallback)
+      .catch(errorCallback);
+}
+```
+
+
+## Donation
+
 
