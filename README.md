@@ -1,27 +1,65 @@
-# NgxYcpay
+# Installation
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.6.
+To install the last active version:
 
-## Development server
+```bash
+npm install ngx-stripe
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+# Notice
+**This library is a reserve until the youcan teams create a library for angular**
 
-## Code scaffolding
+1. This package is only a short module for integration youcanpay card in your angular
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+2. You need to import `https://youcanpay.com/js/ycpay.js` to your angular.json
 
-## Build
+3. This package required your smile before installation 😏
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+**If you dont know angular.json (im also dont know 😅 ) follow me with this steps**
+1. go to your project
+2. scroll down behind of package.json you will see angular.json  (if you don't know package.json this library is not recommended for you)
+3. is not important step
+4. open angular.json 
+5. projects -> project-name -> architect -> options -> scripts
+6. oh wow we finish 
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Using the library
+1. Import the `NgxYcpayModule` into your application
+2. Import the `NgxYcpayModule` into your application
+3. Import the `NgxYcpayModule` into your application
+4. Import the `NgxYcpayModule` into your application
 
-## Further help
+Repetition for Accessibility Knowledge 🍪
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![image](https://user-images.githubusercontent.com/30184753/162644378-a8dd0eaf-91f9-4935-b34d-8e4906d8e074.png)
+
+
+
+```typescript
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppComponent } from './app.component';
+
+// Import the library
+import { NgxYcpayModule } from 'ngx-ycpay';
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [
+    BrowserModule,
+    ReactiveFormsModule,
+    NgxYcpayModule,
+    LibraryModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
+```
+
+Now go to your component and 🤙 call `<ngx-ycpay [ycPublicKey]="'publicKey'"></ngx-ycpay>`
+
