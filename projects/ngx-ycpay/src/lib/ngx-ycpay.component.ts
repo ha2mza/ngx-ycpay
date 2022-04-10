@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+
 declare var YCPay: any;
 
 @Component({
@@ -14,43 +15,48 @@ declare var YCPay: any;
 })
 export class NgxYcpayComponent implements OnInit {
   @Input('yc-form')
-  ycForm: any;
+  ycForm: any = '#ycForm';
 
   @Input('yc-lang')
-  ycLang: any;
+  ycLang: any = 'en';
 
   @Input('yc-sandbox')
-  ycSandbox: any;
+  ycSandbox: any = false;
 
   @Input('yc-error')
-  ycError: any;
+  ycError: any = 'ycError';
 
   @Input('yc-class')
-  ycClass: any;
+  ycClass: any = '';
 
   @Input('class')
-  Class: any;
+  Class: any = 'yc-group';
 
   @Input('yc-publicKey')
   ycPublicKey: any;
+
   @Output()
   pay: EventEmitter<any> = new EventEmitter();
   private instance: any = undefined;
 
   constructor() {
-    this.instance = new YCPay(this.ycPublicKey, {
-      formContainer: `#${this.ycForm}`,
-      locale: this.ycLang,
-      isSandbox: this.ycSandbox,
-      errorContainer: `#${this.ycError}`,
-      customCss: this.ycClass
-    });
+    if (!this.ycPublicKey)
+      throw 'publicKey Required!';
+    else
+      this.instance = new YCPay(this.ycPublicKey, {
+        formContainer: `#${this.ycForm}`,
+        locale: this.ycLang,
+        isSandbox: this.ycSandbox,
+        errorContainer: `#${this.ycError}`,
+        customCss: this.ycClass
+      });
   }
 
   ngOnInit(): void {
   }
 
   Pay() {
-    this.pay.emit(this.instance);
+    if (this.instance)
+      this.pay.emit(this.instance);
   }
 }
