@@ -3,7 +3,7 @@
 To install the last active version:
 
 ```bash
-npm install ngx-stripe
+npm install ngx-ycpay@latest
 ```
 
 # Notice
