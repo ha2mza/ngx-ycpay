@@ -15,7 +15,7 @@ declare var YCPay: any;
 })
 export class NgxYcpayComponent implements OnInit {
   @Input('yc-form')
-  ycForm: any = '#ycForm';
+  ycForm: any = 'ycForm';
 
   @Input('yc-lang')
   ycLang: any = 'en';

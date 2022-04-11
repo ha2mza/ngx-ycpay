@@ -1,24 +1,97 @@
-# NgxYcpay
+# Installation
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.0.
+To install the last active version:
 
-## Code scaffolding
+```bash
+npm install ngx-ycpay@latest
+```
 
-Run `ng generate component component-name --project ngx-ycpay` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-ycpay`.
-> Note: Don't forget to add `--project ngx-ycpay` or else it will be added to the default project in your `angular.json` file. 
+# Notice
+**This library is a reserve until the youcan teams create a library for angular**
 
-## Build
+1. This package is only a short module for integration youcanpay card in your angular
 
-Run `ng build ngx-ycpay` to build the project. The build artifacts will be stored in the `dist/` directory.
+2. You need to import `https://youcanpay.com/js/ycpay.js` to your angular.json
 
-## Publishing
+3. This package required your smile before installation 😏
 
-After building your library with `ng build ngx-ycpay`, go to the dist folder `cd dist/ngx-ycpay` and run `npm publish`.
+**If you dont know angular.json (im also dont know 😅 ) follow me with this steps**
+1. go to your project
+2. scroll down behind of package.json you will see angular.json  (if you don't know package.json this library is not recommended for you)
+3. is not important step
+4. open angular.json
+5. projects -> project-name -> architect -> options -> scripts
+6. oh wow we finish
 
-## Running unit tests
 
-Run `ng test ngx-ycpay` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Using the library
+1. Import the `NgxYcpayModule` into your application
+2. Import the `NgxYcpayModule` into your application
+3. Import the `NgxYcpayModule` into your application
+4. Import the `NgxYcpayModule` into your application
+
+Repetition for Accessibility Knowledge 🍪
+
+![image](https://user-images.githubusercontent.com/30184753/162644378-a8dd0eaf-91f9-4935-b34d-8e4906d8e074.png)
+
+
+
+```typescript
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppComponent } from './app.component';
+
+// Import the library
+import { NgxYcpayModule } from 'ngx-ycpay';
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [
+    BrowserModule,
+    ReactiveFormsModule,
+    NgxYcpayModule,
+    LibraryModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
+```
+
+Now go to your component and 🤙 call `<ngx-ycpay [yc-publicKey]="'publicKey'"></ngx-ycpay>`
+
+other params not required:
+
+
+| Name     | Default Value       |
+| -------  | ------------------- |
+| yc-form  | ycForm              |
+| yc-lang  | en                  |
+| yc-error | ycError             |
+| yc-class | `empty`             |
+| class    | yc-group            |
+
+
+The ngx-ycpay has only one event i call him `Pay`  for more explination when user click pay the event will emit a instance of YCPay in (Pay)="" Event
+
+// component.html
+```xml
+<ngx-ycpay [yc-publicKey]="'publicKey'" (Pay)="MyMethodForCreatToken($event)"></ngx-ycpay>
+```
+
+// component.ts
+```typescript
+MyMethodForCreatToken(ycPay){
+ycPay.pay(tokenId)
+      .then(successCallback)
+      .catch(errorCallback);
+}
+```
+
+
+## Donation
+
+Lah yrheem lawalidin is enough 👌
