@@ -28,14 +28,6 @@ npm install ngx-ycpay@latest
 
 ## Using the library
 1. Import the `NgxYcpayModule` into your application
-2. Import the `NgxYcpayModule` into your application
-3. Import the `NgxYcpayModule` into your application
-4. Import the `NgxYcpayModule` into your application
-
-Repetition for Accessibility Knowledge 🍪
-
-![image](https://user-images.githubusercontent.com/30184753/162644378-a8dd0eaf-91f9-4935-b34d-8e4906d8e074.png)
-
 
 
 ```typescript
